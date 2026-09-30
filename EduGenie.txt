@@ -1,0 +1,81 @@
+Create a complete, modern, responsive AI-powered educational web application called **"EduGenie – Google Gemini Powered Learning Assistant."**
+
+### Project Description
+
+EduGenie is an intelligent topic-based learning platform that helps students understand any academic subject using Google Gemini AI. Students can enter a topic and receive personalized explanations, detailed notes, key concepts, examples, summaries, and AI-generated quizzes based on their selected learning level.
+
+### Main Modules
+
+1. **Home Page**
+
+   * EduGenie logo and navigation bar.
+   * Attractive hero section with the heading "Learn Anything, Smarter with AI."
+   * Topic input box.
+   * Start Learning button.
+   * Feature cards for AI Tutor, Smart Notes, and Quiz Generator.
+
+2. **AI Topic Learning**
+
+   * Enter any academic topic.
+   * Select Beginner, Intermediate, or Advanced level.
+   * Generate topic explanations using Gemini AI.
+   * Display introduction, concepts, examples, and summary.
+
+3. **AI Tutor Chatbot**
+
+   * Interactive chatbot.
+   * Ask questions about any topic.
+   * Get simple and detailed answers.
+   * Support follow-up questions.
+
+4. **Smart Notes Generator**
+
+   * Generate structured notes.
+   * Important definitions and key points.
+   * Automatic summaries.
+   * Copy and download notes.
+
+5. **AI Quiz Generator**
+
+   * Generate MCQs based on the topic.
+   * Four options for each question.
+   * Submit answers and calculate scores.
+   * Show correct answers with explanations.
+
+6. **Learning Dashboard**
+
+   * Recently learned topics.
+   * Completed lessons.
+   * Quiz performance.
+   * Learning progress.
+
+### Design Requirements
+
+* Modern, professional educational UI.
+* Blue, purple, and white color palette.
+* Responsive desktop and mobile layouts.
+* Sidebar dashboard navigation.
+* Rounded cards and subtle shadows.
+* Smooth animations.
+* Dark and light mode.
+* Clean typography and intuitive interface.
+
+### Technology
+
+* Frontend: React.js and Tailwind CSS.
+* Backend: Node.js and Express.js.
+* AI: Google Gemini API.
+* Database: Firebase or MongoDB.
+
+### Functional Requirements
+
+* All buttons and navigation must work.
+* Gemini API should generate dynamic learning content.
+* Include loading animations and error handling.
+* Secure API keys on the backend.
+* Use reusable components and maintainable code.
+* Provide a functional student learning experience.
+
+### Final Goal
+
+Build a fully functional AI learning assistant that transforms any topic into personalized educational content, helping students learn, practice, ask questions, and improve their knowledge through an interactive platform.
