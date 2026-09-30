@@ -1,1 +1,14 @@
-4. *Project Planning Phase*
+## Project Planning Phase
+ The project planning phase defines how **EduGenie** will be developed and completed successfully.
+ - **Project Objective:** Develop an AI-powered learning assistant using Google Gemini.
+- **Requirement Analysis:** Identify student needs, features, and technical requirements.
+- **Technology Selection:** Python, Streamlit, Google Gemini API, and database.
+- **Module Planning:** Plan AI Tutor, Study Material, Quiz, Code Assistant, Language Support, and Progress Tracking.
+- **UI/UX Planning:** Design a simple, responsive, and student-friendly interface.
+- **Database Planning:** Store user profiles, quiz results, learning history, and progress.
+- **AI Integration:** Connect Google Gemini API for intelligent responses and content generation.
+- **Development:** Implement and integrate all planned modules.
+- **Testing:** Test accuracy, functionality, performance, security, and usability.
+- **Deployment:** Deploy the completed application for student use.
+- **Maintenance:** Monitor the system and improve features based on user feedback.
+- **Expected Result:** A reliable, interactive, and personalized AI learning platform.
