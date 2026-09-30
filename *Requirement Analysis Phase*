@@ -1,1 +1,20 @@
-*Requirement Analysis Phase*
+## Requirement Analysis Phase
+ **Functional Requirements:**
+ - User can ask academic questions.
+- AI provides personalized, step-by-step answers.
+- Generate notes, summaries, flashcards, and quizzes.
+- Provide coding assistance.
+- Support multiple languages.
+- Track quiz scores and learning progress.
+ **Non-Functional Requirements:**
+- Simple and user-friendly interface.
+- Fast AI responses.
+- Secure handling of user data.
+- Reliable and accurate responses.
+- Scalable for multiple users.
+**Technology Requirements:**
+- Google Gemini API
+- Python
+- Streamlit
+- Database for user/progress data
+- Internet connection for AI services.
