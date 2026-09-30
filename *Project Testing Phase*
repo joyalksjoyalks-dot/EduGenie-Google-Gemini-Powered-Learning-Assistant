@@ -1,1 +1,13 @@
-*Project Testing Phase*
+## Project Testing Phase
+ The testing phase ensures that **EduGenie** works correctly, reliably, and provides a good learning experience.
+ - **Functional Testing:** Verify that all features work as expected.
+- **AI Response Testing:** Check the accuracy and relevance of Gemini-generated answers.
+- **Quiz Testing:** Verify quiz generation, answer evaluation, and score calculation.
+- **UI Testing:** Ensure the interface is simple, responsive, and user-friendly.
+- **Language Testing:** Verify multilingual responses and translations.
+- **Code Assistant Testing:** Test code explanation, error detection, and suggestions.
+- **Performance Testing:** Check response speed and system performance.
+- **Security Testing:** Ensure user data and API credentials are protected.
+- **Bug Fixing:** Identify, correct, and retest errors.
+- **User Acceptance Testing:** Collect feedback from students and make necessary improvements.
+- **Final Testing:** Perform complete system testing before deployment.
