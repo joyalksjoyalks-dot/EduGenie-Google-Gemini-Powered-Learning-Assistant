@@ -1,1 +1,13 @@
-*Project Documentation Phase*
+## Project Documentation Phase
+ The documentation phase records all details of the **EduGenie** project for future reference and evaluation.
+ - **Project Overview:** Document the purpose, scope, and objectives.
+- **Requirement Documentation:** Record functional and non-functional requirements.
+- **System Design:** Document system architecture, modules, workflow, and database design.
+- **Technology Documentation:** Describe Python, Streamlit, Google Gemini API, and other technologies used.
+- **Implementation Details:** Explain the development and integration of each module.
+- **Testing Documentation:** Record test cases, results, errors, and fixes.
+- **User Guide:** Provide instructions for using EduGenie.
+- **Screenshots:** Include important application screens and outputs.
+- **Results:** Document the final system performance and outcomes.
+- **Future Enhancements:** Mention possible improvements and additional features.
+- **Final Report:** Compile all project details into a complete project report.
