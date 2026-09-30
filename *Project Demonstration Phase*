@@ -1,1 +1,12 @@
-*Project Demonstration Phase*
+## Project Demonstration Phase
+ The demonstration phase presents the completed **EduGenie** application and its key features.
+ - **System Introduction:** Briefly explain the purpose and objectives of EduGenie.
+- **User Interface Demo:** Show the home page, navigation, and student profile.
+- **AI Tutor Demo:** Ask an academic question and demonstrate the Gemini-generated response.
+- **Study Material Demo:** Generate notes, summaries, or flashcards for a topic.
+- **Quiz Demo:** Create a quiz, answer questions, and display the score.
+- **Code Assistant Demo:** Enter sample code and demonstrate explanation or error detection.
+- **Language Support Demo:** Show an educational response in a different language.
+- **Progress Demo:** Display quiz scores and learning progress.
+- **Results Presentation:** Explain how EduGenie helps provide personalized and interactive learning.
+- **Feedback:** Collect feedback from users and identify areas for future improvement.
