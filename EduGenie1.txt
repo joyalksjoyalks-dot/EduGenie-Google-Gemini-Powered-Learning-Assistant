@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EduGenie - AI Learning Assistant</title>
+
+<style>
+
+/* ================================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f8fc;
+    color: #172033;
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    height: 75px;
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid #e8eaf0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #5b5fea,
+        #8b5cf6
+    );
+
+    font-size: 20px;
+}
+
+.logo h2 {
+    font-size: 20px;
+}
+
+.logo small {
+    color: #7b8190;
+    font-size: 11px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #535b6b;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: #5c5fe0;
+}
+
+.login-btn {
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+
+    color: #5559d9;
+    background: #eef0ff;
+
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+    min-height: 620px;
+
+    padding: 80px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 70px;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            #e5e8ff,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            #eee5ff,
+            transparent 30%
+        ),
+        #f8f9ff;
+}
+
+.hero-content {
+    max-width: 620px;
+}
+
+.badge {
+    display: inline-block;
+
+    padding: 9px 16px;
+
+    border-radius: 30px;
+
+    background: #e8eaff;
+    color: #5b5edc;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 72px);
+
+    line-height: 1.05;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #625bdd;
+}
+
+.hero-description {
+    color: #687080;
+
+    font-size: 17px;
+
+    max-width: 560px;
+
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 14px 22px;
+
+    border-radius: 10px;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+.primary-btn {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5b60e8,
+            #7957db
+        );
+
+    box-shadow:
+        0 10px 25px
+        rgba(91,95,232,.25);
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    color: #555c6b;
+
+    background: white;
+
+    border: 1px solid #dfe2eb;
+}
+
+
+/* ================================
+   AI PREVIEW CARD
+================================ */
+
+.ai-preview {
+    width: 390px;
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 25px 60px
+        rgba(40,45,90,.13);
+}
+
+.ai-header {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.ai-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #625bdd,
+            #915be9
+        );
+
+    font-size: 21px;
+}
+
+.ai-header h3 {
+    font-size: 16px;
+}
+
+.ai-header p {
+    font-size: 12px;
+    color: #777e8d;
+}
+
+.online {
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #2bc979;
+}
+
+.preview-message {
+    padding: 16px;
+
+    background: #f1f2ff;
+
+    border-radius: 14px;
+
+    margin: 25px 0 15px;
+
+    color: #5c6372;
+
+    font-size: 14px;
+}
+
+.suggestion {
+    width: 100%;
+
+    text-align: left;
+
+    padding: 12px;
+
+    margin-bottom: 9px;
+
+    background: white;
+
+    border: 1px solid #e2e4eb;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    color: #555d6c;
+}
+
+.suggestion:hover {
+    background: #f5f5ff;
+}
+
+
+/* ================================
+   FEATURES
+================================ */
+
+.features {
+    padding: 30px 8%;
+
+    background: white;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 20px;
+}
+
+.feature {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px;
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    font-size: 20px;
+}
+
+.blue {
+    color: #5864da;
+    background: #e9ebff;
+}
+
+.purple {
+    color: #9055dc;
+    background: #f0e8ff;
+}
+
+.green {
+    color: #22a56b;
+    background: #e5f8ef;
+}
+
+.feature h3 {
+    font-size: 15px;
+}
+
+.feature p {
+    color: #7b8290;
+    font-size: 13px;
+}
+
+
+/* ================================
+   SECTION
+================================ */
+
+.section {
+    padding: 90px 8%;
+}
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.section-title span {
+    color: #625bdd;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+}
+
+.section-title h2 {
+    font-size: 36px;
+
+    margin: 7px 0;
+}
+
+.section-title p {
+    color: #757c89;
+}
+
+
+/* ================================
+   SUBJECTS
+================================ */
+
+.subject-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 20px;
+}
+
+.subject {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    border: 1px solid #e6e8ee;
+
+    transition: .3s;
+}
+
+.subject:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 40px
+        rgba(30,40,80,.10);
+}
+
+.subject-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    margin-bottom: 18px;
+
+    font-size: 21px;
+}
+
+.subject:nth-child(1) .subject-icon {
+    color: #5264dc;
+    background: #e8ebff;
+}
+
+.subject:nth-child(2) .subject-icon {
+    color: #22a56b;
+    background: #e4f8ed;
+}
+
+.subject:nth-child(3) .subject-icon {
+    color: #9255dc;
+    background: #f0e7ff;
+}
+
+.subject:nth-child(4) .subject-icon {
+    color: #df7938;
+    background: #fff0e5;
+}
+
+.subject h3 {
+    margin-bottom: 8px;
+}
+
+.subject p {
+    color: #777e8b;
+
+    font-size: 13px;
+
+    min-height: 65px;
+}
+
+.subject button {
+    border: none;
+
+    background: none;
+
+    color: #5b5edc;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* ================================
+   AI ASSISTANT
+================================ */
+
+.assistant {
+    padding: 90px 8%;
+
+    background: #eef0ff;
+}
+
+.chat-box {
+    max-width: 850px;
+
+    margin: auto;
+
+    background: white;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 50px
+        rgba(40,45,90,.1);
+}
+
+.chat-header {
+    padding: 20px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    border-bottom: 1px solid #e7e9ef;
+}
+
+.chat-header h3 {
+    font-size: 16px;
+}
+
+.chat-header p {
+    color: #777e8b;
+
+    font-size: 12px;
+}
+
+.chat-messages {
+    height: 350px;
+
+    padding: 25px;
+
+    overflow-y: auto;
+}
+
+.message {
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+.message-avatar {
+    min-width: 36px;
+    height: 36px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #5c5edf;
+
+    background: #eaebff;
+}
+
+.message-text {
+    max-width: 75%;
+
+    padding: 12px 16px;
+
+    border-radius: 13px;
+
+    font-size: 14px;
+}
+
+.ai-message .message-text {
+    background: #f1f2ff;
+
+    color: #555d6c;
+}
+
+.user-message {
+    justify-content: flex-end;
+}
+
+.user-message .message-text {
+    color: white;
+
+    background: #625cdd;
+}
+
+.quick-buttons {
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    padding: 0 25px 15px;
+}
+
+.quick-buttons button {
+    padding: 8px 13px;
+
+    border-radius: 20px;
+
+    border: 1px solid #dfe2ea;
+
+    background: white;
+
+    cursor: pointer;
+
+    color: #626a78;
+}
+
+.chat-input {
+    padding: 15px;
+
+    display: flex;
+
+    gap: 10px;
+
+    border-top: 1px solid #e7e9ef;
+}
+
+.chat-input input {
+    flex: 1;
+
+    padding: 13px;
+
+    border-radius: 10px;
+
+    border: 1px solid #dfe2ea;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+.chat-input input:focus {
+    border-color: #625ddd;
+}
+
+.send-btn {
+    width: 50px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    color: white;
+
+    background: #625ddd;
+
+    cursor: pointer;
+
+    font-size: 17px;
+}
+
+
+/* ================================
+   QUIZ
+================================ */
+
+.quiz {
+    background: white;
+}
+
+.quiz-box {
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    background: #f8f8ff;
+
+    border: 1px solid #e4e5f0;
+
+    border-radius: 20px;
+}
+
+.quiz-icon {
+    min-width: 65px;
+
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 17px;
+
+    background: #e9e7ff;
+
+    color: #625bdd;
+
+    font-size: 25px;
+}
+
+.quiz-content {
+    width: 100%;
+}
+
+.quiz-content p {
+    color: #757c89;
+
+    font-size: 14px;
+
+    margin: 7px 0 18px;
+}
+
+.quiz-options {
+    display: flex;
+
+    gap: 10px;
+}
+
+.quiz-options select {
+    padding: 12px;
+
+    border: 1px solid #dfe2ea;
+
+    border-radius: 9px;
+
+    background: white;
+}
+
+#quizResult {
+    max-width: 900px;
+
+    margin: 25px auto;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    padding: 40px 8%;
+
+    background: #171a2a;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.footer-logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.footer-logo p {
+    color: #9298a9;
+
+    font-size: 12px;
+}
+
+.copyright {
+    color: #9298a9;
+
+    font-size: 12px;
+}
+
+
+/* ================================
+   MODAL
+================================ */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.55);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 3000;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-box {
+    width: 90%;
+
+    max-width: 420px;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    text-align: center;
+}
+
+.modal-box h2 {
+    margin-bottom: 10px;
+}
+
+.modal-box p {
+    color: #777e8b;
+
+    margin-bottom: 20px;
+}
+
+.close-modal {
+    border: none;
+
+    padding: 11px 20px;
+
+    border-radius: 9px;
+
+    background: #625ddd;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media(max-width:1000px) {
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .subject-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media(max-width:700px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding: 60px 5%;
+    }
+
+    .ai-preview {
+        width: 100%;
+    }
+
+    .subject-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section,
+    .assistant {
+        padding: 65px 5%;
+    }
+
+    .quiz-box {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .quiz-options {
+        flex-direction: column;
+    }
+
+    .quiz-options select,
+    .quiz-options button {
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 20px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =================================
+     NAVBAR
+================================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            🎓
+        </div>
+
+        <div>
+            <h2>EduGenie</h2>
+            <small>AI Learning Assistant</small>
+        </div>
+
+    </div>
+
+
+    <nav class="nav-links">
+
+        <a href="#home">Home</a>
+
+        <a href="#subjects">Subjects</a>
+
+        <a href="#assistant">AI Tutor</a>
+
+        <a href="#quiz">Quiz</a>
+
+    </nav>
+
+
+    <button class="login-btn" onclick="showLogin()">
+        👤 Login
+    </button>
+
+</header>
+
+
+
+<!-- =================================
+     HERO
+================================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            ✨ Powered by Google Gemini
+        </div>
+
+
+        <h1>
+            Learn Smarter with
+            <span>EduGenie</span>
+        </h1>
+
+
+        <p class="hero-description">
+
+            Your personal AI-powered learning assistant.
+            Ask questions, understand difficult concepts,
+            practice quizzes and learn at your own pace.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <button
+                class="primary-btn"
+                onclick="startLearning()"
+            >
+                Start Learning →
+            </button>
+
+
+            <button
+                class="secondary-btn"
+                onclick="scrollToAssistant()"
+            >
+                🤖 Ask EduGenie
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- AI Preview -->
+
+    <div class="ai-preview">
+
+        <div class="ai-header">
+
+            <div class="ai-icon">
+                🤖
+            </div>
+
+            <div>
+
+                <h3>EduGenie AI</h3>
+
+                <p>
+                    <span class="online"></span>
+                    Online
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="preview-message">
+
+            👋 Hi! I'm EduGenie.
+
+            <br><br>
+
+            What would you like to learn today?
+
+        </div>
+
+
+        <button
+            class="suggestion"
+            onclick="askSuggestion('Explain photosynthesis')"
+        >
+            🌱 Explain Photosynthesis
+        </button>
+
+
+        <button
+            class="suggestion"
+            onclick="askSuggestion('Help me with mathematics')"
+        >
+            📐 Help with Mathematics
+        </button>
+
+
+        <button
+            class="suggestion"
+            onclick="askSuggestion('Give me a science quiz')"
+        >
+            🔬 Give me a Science Quiz
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     FEATURES
+================================= -->
+
+<section class="features">
+
+    <div class="feature">
+
+        <div class="feature-icon blue">
+            🧠
+        </div>
+
+        <div>
+            <h3>AI-Powered Learning</h3>
+
+            <p>
+                Personalized explanations using AI.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon purple">
+            📚
+        </div>
+
+        <div>
+            <h3>Multiple Subjects</h3>
+
+            <p>
+                Learn different subjects easily.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon green">
+            📈
+        </div>
+
+        <div>
+            <h3>Track Progress</h3>
+
+            <p>
+                Monitor your learning journey.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     SUBJECTS
+================================= -->
+
+<section class="section" id="subjects">
+
+    <div class="section-title">
+
+        <span>LEARNING HUB</span>
+
+        <h2>Explore Subjects</h2>
+
+        <p>
+            Choose a subject and start learning with EduGenie.
+        </p>
+
+    </div>
+
+
+    <div class="subject-grid">
+
+
+        <div class="subject">
+
+            <div class="subject-icon">
+                🧮
+            </div>
+
+            <h3>Mathematics</h3>
+
+            <p>
+                Algebra, geometry, calculus and problem solving.
+            </p>
+
+            <button onclick="openSubject('Mathematics')">
+                Start Learning →
+            </button>
+
+        </div>
+
+
+
+        <div class="subject">
+
+            <div class="subject-icon">
+                🧪
+            </div>
+
+            <h3>Science</h3>
+
+            <p>
+                Physics, chemistry, biology and experiments.
+            </p>
+
+            <button onclick="openSubject('Science')">
+                Start Learning →
+            </button>
+
+        </div>
+
+
+
+        <div class="subject">
+
+            <div class="subject-icon">
+                💻
+            </div>
+
+            <h3>Programming</h3>
+
+            <p>
+                Learn coding, algorithms and web development.
+            </p>
+
+            <button onclick="openSubject('Programming')">
+                Start Learning →
+            </button>
+
+        </div>
+
+
+
+        <div class="subject">
+
+            <div class="subject-icon">
+                🌐
+            </div>
+
+            <h3>English</h3>
+
+            <p>
+                Grammar, vocabulary, writing and communication.
+            </p>
+
+            <button onclick="openSubject('English')">
+                Start Learning →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     AI ASSISTANT
+================================= -->
+
+<section class="assistant" id="assistant">
+
+    <div class="section-title">
+
+        <span>AI TUTOR</span>
+
+        <h2>Ask EduGenie Anything</h2>
+
+        <p>
+            Get simple explanations and personalized learning support.
+        </p>
+
+    </div>
+
+
+    <div class="chat-box">
+
+
+        <div class="chat-header">
+
+            <div class="ai-icon">
+                🤖
+            </div>
+
+            <div>
+
+                <h3>EduGenie AI Tutor</h3>
+
+                <p>
+                    <span class="online"></span>
+                    Ready to help
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="chat-messages"
+            id="chatMessages"
+        >
+
+            <div class="message ai-message">
+
+                <div class="message-avatar">
+                    🤖
+                </div>
+
+                <div class="message-text">
+
+                    Hello! 👋
+
+                    I'm EduGenie.
+
+                    Ask me any educational question
+                    and I'll help you understand it.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="quick-buttons">
+
+            <button onclick="askSuggestion('Explain this concept simply')">
+                Explain simply
+            </button>
+
+            <button onclick="askSuggestion('Give me an example')">
+                Give an example
+            </button>
+
+            <button onclick="askSuggestion('Create practice questions')">
+                Practice questions
+            </button>
+
+        </div>
+
+
+        <div class="chat-input">
+
+            <input
+                type="text"
+                id="userInput"
+                placeholder="Ask EduGenie a question..."
+                onkeydown="handleEnter(event)"
+            >
+
+            <button
+                class="send-btn"
+                onclick="sendMessage()"
+            >
+                ➤
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     QUIZ
+================================= -->
+
+<section class="section quiz" id="quiz">
+
+    <div class="section-title">
+
+        <span>PRACTICE</span>
+
+        <h2>Test Your Knowledge</h2>
+
+        <p>
+            Create personalized quizzes with EduGenie.
+        </p>
+
+    </div>
+
+
+    <div class="quiz-box">
+
+        <div class="quiz-icon">
+            💡
+        </div>
+
+
+        <div class="quiz-content">
+
+            <h3>
+                Ready for a challenge?
+            </h3>
+
+            <p>
+                Select a subject and difficulty level
+                to generate a practice quiz.
+            </p>
+
+
+            <div class="quiz-options">
+
+                <select id="quizSubject">
+
+                    <option>Mathematics</option>
+
+                    <option>Science</option>
+
+                    <option>Programming</option>
+
+                    <option>English</option>
+
+                </select>
+
+
+                <select id="difficulty">
+
+                    <option>Easy</option>
+
+                    <option>Medium</option>
+
+                    <option>Hard</option>
+
+                </select>
+
+
+                <button
+                    class="primary-btn"
+                    onclick="generateQuiz()"
+                >
+                    Generate Quiz
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="quizResult"></div>
+
+</section>
+
+
+
+<!-- =================================
+     FOOTER
+================================= -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <div class="logo-icon">
+            🎓
+        </div>
+
+        <div>
+
+            <h3>EduGenie</h3>
+
+            <p>
+                Learn. Practice. Grow.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <p class="copyright">
+
+        © 2026 EduGenie. All rights reserved.
+
+    </p>
+
+</footer>
+
+
+
+<!-- =================================
+     LOGIN MODAL
+================================= -->
+
+<div
+    class="modal"
+    id="loginModal"
+>
+
+    <div class="modal-box">
+
+        <h2>
+            Welcome to EduGenie 👋
+        </h2>
+
+        <p>
+            Login functionality can be connected
+            to Firebase or another authentication system.
+        </p>
+
+        <button
+            class="close-modal"
+            onclick="closeLogin()"
+        >
+            Close
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+/* =====================================
+   SCROLL
+===================================== */
+
+function startLearning() {
+
+    document
+        .getElementById("subjects")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+function scrollToAssistant() {
+
+    document
+        .getElementById("assistant")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+
+/* =====================================
+   SUBJECT
+===================================== */
+
+function openSubject(subject) {
+
+    scrollToAssistant();
+
+    setTimeout(function() {
+
+        const input =
+            document.getElementById("userInput");
+
+        input.value =
+            "Teach me " +
+            subject +
+            " from the basics.";
+
+        input.focus();
+
+    }, 600);
+
+}
+
+
+
+/* =====================================
+   SUGGESTIONS
+===================================== */
+
+function askSuggestion(question) {
+
+    scrollToAssistant();
+
+    setTimeout(function() {
+
+        const input =
+            document.getElementById("userInput");
+
+        input.value = question;
+
+        sendMessage();
+
+    }, 500);
+
+}
+
+
+
+/* =====================================
+   CHAT
+===================================== */
+
+function handleEnter(event) {
+
+    if (event.key === "Enter") {
+
+        sendMessage();
+
+    }
+
+}
+
+
+function sendMessage() {
+
+    const input =
+        document.getElementById("userInput");
+
+    const message =
+        input.value.trim();
+
+    if (message === "") {
+
+        return;
+
+    }
+
+
+    addUserMessage(message);
+
+    input.value = "";
+
+
+    setTimeout(function() {
+
+        addAIMessage(
+            "🤖 Great question! I'm currently running in demo mode. " +
+            "Connect the Gemini API to make EduGenie generate real AI answers."
+        );
+
+    }, 700);
+
+}
+
+
+
+function addUserMessage(message) {
+
+    const chat =
+        document.getElementById("chatMessages");
+
+
+    const div =
+        document.createElement("div");
+
+
+    div.className =
+        "message user-message";
+
+
+    div.innerHTML = `
+
+        <div class="message-text">
+
+            ${escapeHTML(message)}
+
+        </div>
+
+    `;
+
+
+    chat.appendChild(div);
+
+    scrollChat();
+
+}
+
+
+
+function addAIMessage(message) {
+
+    const chat =
+        document.getElementById("chatMessages");
+
+
+    const div =
+        document.createElement("div");
+
+
+    div.className =
+        "message ai-message";
+
+
+    div.innerHTML = `
+
+        <div class="message-avatar">
+            🤖
+        </div>
+
+        <div class="message-text">
+
+            ${escapeHTML(message)}
+
+        </div>
+
+    `;
+
+
+    chat.appendChild(div);
+
+    scrollChat();
+
+}
+
+
+
+function scrollChat() {
+
+    const chat =
+        document.getElementById("chatMessages");
+
+
+    chat.scrollTop =
+        chat.scrollHeight;
+
+}
+
+
+
+/* =====================================
+   QUIZ
+===================================== */
+
+function generateQuiz() {
+
+    const subject =
+        document.getElementById("quizSubject").value;
+
+
+    const difficulty =
+        document.getElementById("difficulty").value;
+
+
+    const result =
+        document.getElementById("quizResult");
+
+
+    result.innerHTML = `
+
+        <div class="subject">
+
+            <h3>
+                🧠 ${subject} Quiz
+            </h3>
+
+            <p>
+                Difficulty:
+                <strong>${difficulty}</strong>
+            </p>
+
+            <p>
+                EduGenie will generate personalized
+                questions after connecting the Gemini API.
+            </p>
+
+            <button
+                class="primary-btn"
+                onclick="scrollToAssistant()"
+            >
+                Ask EduGenie
+            </button>
+
+        </div>
+
+    `;
+
+}
+
+
+
+/* =====================================
+   LOGIN
+===================================== */
+
+function showLogin() {
+
+    document
+        .getElementById("loginModal")
+        .classList.add("active");
+
+}
+
+
+function closeLogin() {
+
+    document
+        .getElementById("loginModal")
+        .classList.remove("active");
+
+}
+
+
+
+/* =====================================
+   SECURITY
+===================================== */
+
+function escapeHTML(text) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+
+}
