@@ -1,1 +1,15 @@
-*Project Design Phase Phase*
+## Project Design Phase
+ **System Design:**\
+ EduGenie consists of a user interface, Gemini AI module, learning modules, and progress-tracking system.
+**Main Modules:**
+- 👤 User Profile
+- 💬 AI Tutor
+- 📚 Study Material Generator
+- 📝 Quiz Generator
+- 💻 Code Assistant
+- 🌐 Language Support
+- 📊 Progress Tracker
+**Workflow:**\
+ **Student → EduGenie Interface → Gemini AI → Personalized Response → Student**
+**Design Goal:**\
+ Create a simple, interactive, and user-friendly platform for personalized learning.
